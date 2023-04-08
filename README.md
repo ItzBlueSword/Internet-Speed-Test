@@ -33,6 +33,10 @@ To use the internet speed tester, follow these instructions:
 
 Note: The internet speed tester may not give the most accurate result depending on various factors such as network congestion, distance from the server, and device performance.
 
+## Programming Languages Used
+
+![HTML5](./assets/html.svg) ![CSS](./assets/css.svg) ![JAVASCRIPT](./assets/javascript.svg)
+
 ## License
 
 [Apache 2.0 License](https://choosealicense.com/licenses/apache-2.0/)
