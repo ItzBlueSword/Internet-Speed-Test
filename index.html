@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Internet Speed Test</title>
+</head>
+<body>
+    <div class="container">
+        <div class="loader-widget">
+            <h1>CHECK YOUR INTERNET SPEED</h1>
+            <span class="loader hide"></span>
+            <div class="loader-content">
+                <div class="content">24<small>Mbps</small></div>
+                <button>CHECK</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.querySelector('button').addEventListener('click', () => {
+        var imageLink = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmovenpick.accor.com%2Fen%2Fasia%2Fmalaysia%2Fkuala-lumpur%2Fthings-to-do%2Fpetronas-twin-towers-klcc.html&psig=AOvVaw2vB3Qivxu71bwm7rlof8MZ&ust=1681032224873000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCLDJma77mf4CFQAAAAAdAAAAABAD',
+            downloadSize = 8185374,
+            time_start, time_end,
+            downloadSrc = new Image();
+        time_start = new Date().getTime();
+        console.log(time_start);
+        var cacheImg = "?nn=" + time_start;
+        downloadSrc.src = imageLink + cacheImg;
+        console.log(downloadSrc);
+        downloadSrc.onload = function () {
+            //this function will trigger once the image loads
+            time_end = new Date().getTime();
+            var timeDuration = (time_end - time_start) / 1000;
+                loadedBytes = downloadSize * 8,
+                totalSpeed = ((loadedBytes / timeDuration) / 1024 / 1024).toFixed(2);
+            document.querySelector('.content').innerHTML = totalSpeed + '<small>Mbps</small>'
+        }
+    })
+</script>
+
+</html>
